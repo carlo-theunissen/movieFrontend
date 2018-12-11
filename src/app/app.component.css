@@ -1,0 +1,24 @@
+.loading{
+  color: white;
+  width: 200px;
+  margin: 40px auto;
+  font-size: 40px;
+}
+#videos{
+  overflow:hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#scroll{
+  position: absolute;
+  transition: all 1s;
+}
+app-video-container{
+  opacity: 0;
+  transition: opacity 1s;
+}
+.active app-video-container{
+  opacity: 1;
+}

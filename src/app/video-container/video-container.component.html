@@ -1,0 +1,19 @@
+<div id="container" [ngClass]="{'active' : displayAnimations, 'load' : loading}">
+  <div id="loadBar">
+    <div id="loaded"></div>
+  </div>
+  <div id="content">
+    <h1 id="title">{{title}}</h1>
+    <div id="spanGroup"> <span *ngFor="let span of tags">{{span}}</span></div>
+    <div id="description">
+      {{description}}
+    </div>
+    <div id="actors">
+      <div class="actor" *ngFor="let actor of actors">
+        <div class="actorImage" [style.backgroundImage]="'url(\''+actor.image+'\')'" ></div>
+        <div class="actorName">{{actor.name}}</div>
+      </div>
+    </div>
+  </div>
+  <div id="image" [style.backgroundImage]="'url(\''+bgImage+'\')'" ></div>
+</div>
