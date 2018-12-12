@@ -50,7 +50,7 @@ export class AppComponent {
     //port
     let url = "http://"+location.hostname;
     if(location.port !== ""){
-      url += ":8090"
+      url += ":8090" + "";
     }
 
     this.http.get(url+"/api/allMovies").subscribe(
