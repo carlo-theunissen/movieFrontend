@@ -46,7 +46,14 @@ export class AppComponent {
       this.showNextAnimation();
   }
   private populateWithNewData(){
-    this.http.get("http://localhost:8090/api/allMovies").subscribe(
+
+    //port
+    let url = "http://"+location.hostname;
+    if(location.port !== ""){
+      url += ":8090"
+    }
+
+    this.http.get(url+"/api/allMovies").subscribe(
       (val) => {
         const resoponse = JSON.stringify(val);
         if(this.lastResponse !== resoponse) {
