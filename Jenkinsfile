@@ -21,7 +21,7 @@ pipeline {
      stage('Build') {
           steps {
             sh 'npm prune --production'
-            sh 'npm install --production'
+            sh 'npm install'
             sh 'ng build --prod'
           }
         }
