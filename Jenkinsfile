@@ -27,9 +27,9 @@ pipeline {
         }
       stage('Create Image') {
          steps {
-           sh 'chmod -R 777 .'
-           sh 'docker rm -f frontend || true'
-           sh 'docker build -t frontend .'
+           sh 'chmod -R 777 dist/'
+           sh 'docker rm -f frontend_angular || true'
+           sh 'docker build -t frontend_angular .'
            sh 'docker image prune -f'
          }
        }
