@@ -1,0 +1,36 @@
+<div id="container">
+  <h1>Let's add a new movie</h1>
+  <div id="loading" *ngIf="state === 'loading'" > <!-- -->
+    Loading
+  </div>
+  <div id="success" *ngIf="state === 'success'"> <!--  -->
+    Success!
+  </div>
+  <form method="post" (submit)="handleSubmit()">
+    <div class="inputGroup">
+      <span>Name</span>
+      <input type="text" [(ngModel)]="name" name="name">
+    </div>
+    <div class="inputGroup">
+      <span>Description</span>
+      <textarea name="description" [(ngModel)]="description"></textarea>
+    </div>
+    <div class="inputGroup">
+      <span>Duration</span>
+      <input type="number" name="duration" [(ngModel)]="duration">
+    </div>
+    <div class="inputGroup">
+      <span>Actors</span>
+      <input type="text" name="actors" [(ngModel)]="actors">
+    </div>
+    <div class="inputGroup">
+      <span>Genres</span>
+      <input type="text" name="genres" [(ngModel)]="genres">
+    </div>
+    <div class="inputGroup">
+      <span>Background Image</span>
+      <input type="text" name="bgImage" [(ngModel)]="bgImage">
+    </div>
+    <input type="submit" value="Save">
+  </form>
+</div>
