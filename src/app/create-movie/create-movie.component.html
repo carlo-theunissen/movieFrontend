@@ -1,11 +1,5 @@
 <div id="container">
   <h1>Let's add a new movie</h1>
-  <div id="loading" *ngIf="state === 'loading'" > <!-- -->
-    Loading
-  </div>
-  <div id="success" *ngIf="state === 'success'"> <!--  -->
-    Success!
-  </div>
   <form method="post" (submit)="handleSubmit()">
     <div class="inputGroup">
       <span>Name</span>
