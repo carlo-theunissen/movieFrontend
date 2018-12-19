@@ -1,5 +1,14 @@
 <div id="container">
   <h1>Let's add a new movie</h1>
+  <div id="loading" *ngIf="state === 'loading'" > <!-- -->
+    Loading
+  </div>
+  <div id="success" *ngIf="state === 'success'"> <!--  -->
+    Success!
+  </div>
+  <div id="fail" *ngIf="state === 'fail'"> <!--  -->
+    Sorry, the server did not response
+  </div>
   <form method="post" (submit)="handleSubmit()">
     <div class="inputGroup">
       <span>Name</span>
@@ -15,11 +24,21 @@
     </div>
     <div class="inputGroup">
       <span>Actors</span>
-      <input type="text" name="actors" [(ngModel)]="actors">
+      <div class="checkboxList">
+        <div class="checkboxItem" *ngFor="let item of actorList; index as i">
+          <input type="checkbox" [checked]="!!actorList[i].checked" (change)="actorList[i].checked = !actorList[i].checked">
+          {{actorList[i].name}}
+        </div>
+      </div>
     </div>
     <div class="inputGroup">
       <span>Genres</span>
-      <input type="text" name="genres" [(ngModel)]="genres">
+      <div class="checkboxList">
+        <div class="checkboxItem" *ngFor="let item of genresList; index as i">
+          <input type="checkbox" [checked]="!!genresList[i].checked" (change)="genresList[i].checked = !genresList[i].checked">
+          {{genresList[i].name}}
+        </div>
+      </div>
     </div>
     <div class="inputGroup">
       <span>Background Image</span>

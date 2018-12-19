@@ -36,7 +36,10 @@ input[type=submit]{
   color: white;
   margin-top: 10px;
 }
-
+input[type=checkbox]{
+  display: inline;
+  width: inherit;
+}
 #loading{
   background-color: lightgrey;
   color: black;
@@ -54,3 +57,10 @@ input[type=submit]{
   margin: 5px;
 }
 
+#fail{
+  background-color: lightpink;
+  color: black;
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px;
+}
